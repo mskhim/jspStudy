@@ -1,6 +1,7 @@
 package co.kh.dev.member;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -25,6 +26,7 @@ public class MemberInsert extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1-1. 전송된 값을 UTF-8 세팅.
 		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charSet=UTF-8");
 		// 1-2. 정보 가져오기
 		String name = request.getParameter("name");
 		String uid = request.getParameter("id");
@@ -41,7 +43,6 @@ public class MemberInsert extends HttpServlet {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			con = DriverManager.getConnection(url, id, pw);
-			
 			pstmt = con.prepareStatement(MEMBER_INSERT);
 			pstmt.setString(1, name);
 			pstmt.setString(2, uid);
@@ -73,7 +74,32 @@ public class MemberInsert extends HttpServlet {
 		}//finally
 		if(flag) {
 			System.out.println("입력성공");
-			response.sendRedirect("memberList");
+			PrintWriter out = response.getWriter();
+			out.println("<h1 align=\"center\">회원가입이 완료되었습니다.</h1>");
+			out.println("<table align=\"center\" width=\"300\" border=\"1\">");
+			out.println("<tr>");
+			out.println("<td align=\"center\">");
+			out.println("이름 = "+ name);
+			out.println("</td>");
+			out.println("</tr>");
+			out.println("<tr>");
+			out.println("<tr>");
+			out.println("<td align=\"center\">");
+			out.println("id = "+ uid);
+			out.println("</td>");
+			out.println("</tr>");
+			out.println("<tr>");
+			out.println("<td align=\"center\">");
+			out.println("비밀번호 = "+ pwd);
+			out.println("</td>");
+			out.println("</tr>");
+			out.println("<tr>");
+			out.println("<td align=\"center\">");
+			out.println("<a href='/jspStudy/loginServlet.do'><input type=\"button\" value=\"로그인\"></a>");
+			out.println("</td>");
+			out.println("</tr>");
+			out.println("</table>");
+			
 		}else {
 			System.out.println("입력실패");
 		}

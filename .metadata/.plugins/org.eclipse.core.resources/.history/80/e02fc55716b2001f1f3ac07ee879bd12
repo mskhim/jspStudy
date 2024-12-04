@@ -1,0 +1,65 @@
+package co.kh.dev.member;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet({ "/memberFinish.do" })
+public class MemberFinish extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public MemberFinish() {
+        super();
+    }
+
+	protected void processRequest(HttpServletRequest request, HttpServletResponse response) {
+	try {
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charSet=UTF-8");
+		PrintWriter out = response.getWriter();
+		
+		out.println("<h1 align=\"center\">회원가입이 완료되었습니다.</h1>");
+		out.println("<table align=\"center\" width=\"465\" border=\"1\">");
+		out.println("<tr>");
+		out.println("<td>");
+		out.println("이름 = "+ request.getParameter("name"));
+		out.println("</td>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<tr>");
+		out.println("<td>");
+		out.println("id = "+ request.getParameter("id"));
+		out.println("</td>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<td>");
+		out.println("비밀번호 = "+ request.getParameter("pwd"));
+		out.println("</td>");
+		out.println("</tr>");
+		out.println("</table>");
+		
+
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+		processRequest(request, response);
+	}
+
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+		processRequest(request, response);
+	}
+
+
+}

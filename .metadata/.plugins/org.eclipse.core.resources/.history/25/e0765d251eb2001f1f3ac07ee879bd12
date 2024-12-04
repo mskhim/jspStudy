@@ -1,0 +1,78 @@
+package co.kh.dev.member;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import co.kh.dev.DBUtility;
+
+@WebServlet({ "/memberUpdateSurvlet.do" })
+public class MemberUpdateSurvlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	private void processRequest(HttpServletRequest request, HttpServletResponse response) {
+	try {
+		final String UPDATE_SQL = "UPDATE MEMBER SET NAME=?, ID=?, PWD=? WHERE ID=?";
+		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
+		Connection con = DBUtility.dbCon();
+		PreparedStatement pstmt = null;
+		System.out.println("123");
+		String nname = request.getParameter("name");
+		System.out.println("123");
+		String nid = request.getParameter("id");
+		System.out.println("123");
+		String npwd = request.getParameter("pwd");
+		System.out.println("123");
+		String sid =  (String) session.getAttribute("id");
+		System.out.println(nname+nid+npwd+sid);
+		pstmt = con.prepareStatement(UPDATE_SQL);
+		System.out.println(nname+nid+npwd+sid);
+		pstmt.setString(1, nname);
+		System.out.println(nname+nid+npwd+sid);
+		pstmt.setString(2, nid);
+		System.out.println(nname+nid+npwd+sid);
+		pstmt.setString(3, npwd);
+		System.out.println(nname+nid+npwd+sid);
+		pstmt.setString(4, sid);
+		System.out.println(nname+nid+npwd+sid);
+		pstmt.executeUpdate();
+		System.out.println("123");
+		session.setAttribute("name", nname);
+		System.out.println("123");
+		session.setAttribute("id", nid);
+		System.out.println("123");
+		session.setAttribute("pwd", npwd);
+		System.out.println("123");
+		response.sendRedirect("myPageServlet.do");
+		System.out.println("123");
+	} catch (UnsupportedEncodingException | SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	}
+       
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+		processRequest(request, response);
+	}
+
+
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+		processRequest(request, response);
+	}
+}

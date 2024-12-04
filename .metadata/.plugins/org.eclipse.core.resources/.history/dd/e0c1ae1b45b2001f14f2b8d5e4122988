@@ -1,0 +1,41 @@
+package co.kh.dev.login.controler;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import co.kh.dev.DBUtility;
+import co.kh.dev.login.model.MemberVO;
+import oracle.sql.DATE;
+
+public class MemberDAO {
+	private final String SELECT_SQL = "SELECT * FROM MEMBER ORDER BY NO";
+
+	public ArrayList<MemberVO> selectDB() {
+		Connection con = DBUtility.dbCon();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<MemberVO> mList = new ArrayList<MemberVO>();
+		try {
+			pstmt= con.prepareStatement(SELECT_SQL);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+			int no = rs.getInt("NO");
+			String name = rs.getString("NAME");
+			String id = rs.getString("ID");
+			String pwd = rs.getString("PWD");
+			String phone = rs.getString("PHONE");
+			DATE regdate = rs.getDate("REGDATE");
+			
+			
+			
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}

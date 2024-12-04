@@ -1,0 +1,60 @@
+package co.kh.dev.member;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet({ "/memberUpdateSurvlet.do" })
+public class MemberUpdateSurvlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	private void processRequest(HttpServletRequest request, HttpServletResponse response) {
+	try {
+		PrintWriter out =	response.getWriter();
+		out.println("<form method=\"post\" action=\"/jspStudy/memberInsert\">\r\n"
+				+ "		<table align=\"center\" width=\"465\" border=\"1\">\r\n"
+				+ "\r\n"
+				+ "			<tr>\r\n"
+				+ "				<th style=\"padding: 10px 3px;\">이름</th>\r\n"
+				+ "				<td><input type=\"text\" name=\"name\" size=\"48\"\r\n"
+				+ "					style=\"height: 23px;\"></td>\r\n"
+				+ "			</tr>\r\n"
+				+ "			<tr>\r\n"
+				+ "				<th style=\"padding: 10px 3px;\">아이디</th>\r\n"
+				+ "				<td><input type=\"text\" name=\"id\" size=\"48\"\r\n"
+				+ "					style=\"height: 23px;\"></td>\r\n"
+				+ "			</tr>\r\n"
+				+ "			<tr>\r\n"
+				+ "				<th style=\"padding: 10px 3px;\">비밀번호</th>\r\n"
+				+ "				<td><input type=\"password\" name=\"pwd\" size=\"48\"\r\n"
+				+ "					style=\"height: 23px;\"></td>\r\n"
+				+ "			</tr>\r\n"
+				+ "			<tr>\r\n"
+				+ "				<td colspan=\"2\" align=\"center\"><input type=\"submit\"\r\n"
+				+ "					value=\"회원가입\">&nbsp;&nbsp; <input type=\"reset\" value=\"취소\">\r\n"
+				+ "				</td>\r\n"
+				+ "			</tr>\r\n"
+				+ "		</table>\r\n"
+				+ "	</form>");
+		
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	}
+       
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+		processRequest(request, response);
+	}
+
+
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+		processRequest(request, response);
+	}
+}

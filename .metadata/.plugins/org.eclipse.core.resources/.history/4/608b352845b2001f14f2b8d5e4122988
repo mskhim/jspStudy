@@ -1,0 +1,5 @@
+package co.kh.dev.login.model;
+
+public class MemberVO {
+
+}
