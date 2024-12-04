@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form  method="post" action="/jspStudy/memnerInsert">
+<table align="center" width="455" border="1" >
+
+<tr style="padding : 10px 0;">
+<th>이름 </th>
+<td><input type="text" name="name" size="48" style> </td>
+</tr>
+<tr>
+<th>아이디 </th>
+<td><input type="text" name="id" size="48" > </td>
+</tr>
+<tr>
+<th>비밀번호 </th>
+<td><input type="password" name="pwd" size="48"  > </td>
+</tr>
+
+
+</table>
+
+
+</form>
+</body>
+</html>
