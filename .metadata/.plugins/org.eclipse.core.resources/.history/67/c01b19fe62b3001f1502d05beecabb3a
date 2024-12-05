@@ -93,11 +93,15 @@ public class MemberDAO {
 		PreparedStatement pstmt = null;
 		int rs = 0;
 		try {
+			if(selectByIdDB(mvo).getRegdate()==null) {
 			pstmt= con.prepareStatement(INSERT_SQL);
 			pstmt.setString(1, mvo.getName());
 			pstmt.setString(2, mvo.getId());
 			pstmt.setString(3, mvo.getPwd());
 			rs = pstmt.executeUpdate();
+			}else {
+				return false;
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

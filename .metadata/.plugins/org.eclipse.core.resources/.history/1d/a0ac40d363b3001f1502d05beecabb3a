@@ -19,14 +19,13 @@ public class MemberRegistServlet extends HttpServlet {
 		try {
 			request.setCharacterEncoding("UTF-8");
 			response.setContentType("text/html;charSet=UTF-8");
-			RequestDispatcher rd = request.getRequestDispatcher("/member/memberAfterRegist.jsp");
 			String name = request.getParameter("name");
 			String uid = request.getParameter("id");
 			String pwd = request.getParameter("pwd");
 			MemberVO mvo = new MemberVO(name, uid, pwd);
-		MemberVO checkMvo = mDAO.selectByIdDB(mvo);
-			if(checkMvo.getRegdate()==null) {
-				mDAO.insertDB(mvo);
+			RequestDispatcher rd = request.getRequestDispatcher("/member/memberAfterRegist.jsp");
+			boolean insertFlag = mDAO.insertDB(mvo);
+			if(insertFlag) {
 				request.setAttribute("name", name);
 				request.setAttribute("id", uid);
 				request.setAttribute("pwd", pwd);
