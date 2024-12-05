@@ -1,0 +1,14 @@
+127.0.0.1 - - [06/Dec/2024:08:51:52 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [06/Dec/2024:08:52:03 +0900] "GET /jspStudy/member/memberLogin.jsp HTTP/1.1" 200 1273
+0:0:0:0:0:0:0:1 - - [06/Dec/2024:08:52:03 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [06/Dec/2024:08:52:04 +0900] "GET /jspStudy/member/memberRegist.jsp HTTP/1.1" 200 1326
+0:0:0:0:0:0:0:1 - - [06/Dec/2024:08:52:18 +0900] "POST /jspStudy/memberRegistServlet.do HTTP/1.1" 200 1192
+0:0:0:0:0:0:0:1 - - [06/Dec/2024:08:52:20 +0900] "GET /jspStudy/member/memberLogin.jsp HTTP/1.1" 200 1273
+0:0:0:0:0:0:0:1 - - [06/Dec/2024:08:52:21 +0900] "GET /jspStudy/member/memberRegist.jsp HTTP/1.1" 200 1326
+0:0:0:0:0:0:0:1 - - [06/Dec/2024:08:52:26 +0900] "POST /jspStudy/memberRegistServlet.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [06/Dec/2024:08:52:26 +0900] "GET /jspStudy/member/memberRegist.jsp?error=1 HTTP/1.1" 200 1443
+0:0:0:0:0:0:0:1 - - [06/Dec/2024:08:52:35 +0900] "GET /jspStudy/member/memberLogin.jsp HTTP/1.1" 200 1273
+0:0:0:0:0:0:0:1 - - [06/Dec/2024:08:52:39 +0900] "POST /jspStudy/memberloginCheckServlet.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [06/Dec/2024:08:52:39 +0900] "GET /jspStudy/member/memberLogin.jsp?error=1 HTTP/1.1" 200 1379
+0:0:0:0:0:0:0:1 - - [06/Dec/2024:08:52:44 +0900] "POST /jspStudy/memberloginCheckServlet.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [06/Dec/2024:08:52:44 +0900] "GET /jspStudy/member/memberLogin.jsp?error=1 HTTP/1.1" 200 1379
