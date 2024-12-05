@@ -13,10 +13,12 @@ import co.kh.dev.login.model.MemberVO;
 public class MemberDAO {
 	private final String SELECT_SQL = "SELECT * FROM MEMBER ORDER BY NO";
 	private final String SELECT_BY_ID_SQL = "SELECT * FROM MEMBER WHERE ID = ?";
-	private final String INSERT_SQL = "INSERT INTO MEMBER VALUES((SELECT NVL(MAX(NO),0)+1 FROM MEMBER),?,?,?,?,SYSDATE)";
+	private final String SELECT_LOGIN_CHECK_SQL = "SELECT * FROM MEMBER WHERE ID = ? AND PWD = ?";
+	private final String INSERT_SQL = "INSERT INTO MEMBER VALUES((SELECT NVL(MAX(NO),0)+1 FROM MEMBER),?,?,?,SYSDATE)";
 	private final String DELETE_SQL = "DELETE FROM MEMBER WHERE NO = ?";
-	private final String UPDATE_SQL = "UPDATE MEMBER SET NAME= ? , ID= ? , PWD = ? , PHONE = ? WHERE NO = ?";
-
+	private final String UPDATE_SQL = "UPDATE MEMBER SET NAME= ? , PWD = ? WHERE ID = ?";
+	
+	//전체를 DB에서 출력
 	public ArrayList<MemberVO> selectDB() {
 		Connection con = DBUtility.dbCon();
 		PreparedStatement pstmt = null;
@@ -30,9 +32,8 @@ public class MemberDAO {
 			String name = rs.getString("NAME");
 			String id = rs.getString("ID");
 			String pwd = rs.getString("PWD");
-			String phone = rs.getString("PHONE");
 			Date regdate = rs.getDate("REGDATE");
-			MemberVO mvo= new MemberVO(no, name, id, pwd, phone, regdate);
+			MemberVO mvo= new MemberVO(no, name, id, pwd, regdate);
 			mList.add(mvo);
 			}
 		} catch (SQLException e) {
@@ -41,7 +42,7 @@ public class MemberDAO {
 		}
 		return mList;
 	}
-	
+	//아이디를 받아서 아이디에 맞는 레코드 출력
 	public MemberVO selectByIdDB(MemberVO mvo) {
 		Connection con = DBUtility.dbCon();
 		PreparedStatement pstmt = null;
@@ -55,9 +56,31 @@ public class MemberDAO {
 				String name = rs.getString("NAME");
 				String id = rs.getString("ID");
 				String pwd = rs.getString("PWD");
-				String phone = rs.getString("PHONE");
 				Date regdate = rs.getDate("REGDATE");
-				mvo= new MemberVO(no, name, id, pwd, phone, regdate);
+				mvo= new MemberVO(no, name, id, pwd, regdate);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return mvo;
+	}
+	//id, pwd를받아서 맞는 레코드를 출력
+	public MemberVO selectLoginCheckDB(MemberVO mvo) {
+		Connection con = DBUtility.dbCon();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt= con.prepareStatement(SELECT_LOGIN_CHECK_SQL);
+			pstmt.setString(1, mvo.getId());
+			pstmt.setString(2, mvo.getPwd());
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				int no = rs.getInt("NO");
+				String name = rs.getString("NAME");
+				String id = rs.getString("ID");
+				String pwd = rs.getString("PWD");
+				Date regdate = rs.getDate("REGDATE");
+				mvo= new MemberVO(no, name, id, pwd, regdate);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -70,13 +93,15 @@ public class MemberDAO {
 		PreparedStatement pstmt = null;
 		int rs = 0;
 		try {
+			if(selectByIdDB(mvo).getRegdate()==null) {
 			pstmt= con.prepareStatement(INSERT_SQL);
 			pstmt.setString(1, mvo.getName());
 			pstmt.setString(2, mvo.getId());
 			pstmt.setString(3, mvo.getPwd());
-			pstmt.setString(4, mvo.getPhone());
 			rs = pstmt.executeUpdate();
-			
+			}else {
+				return false;
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -104,10 +129,8 @@ public class MemberDAO {
 		try {
 			pstmt= con.prepareStatement(UPDATE_SQL);
 			pstmt.setString(1, mvo.getName());
-			pstmt.setString(2, mvo.getId());
-			pstmt.setString(3, mvo.getPwd());
-			pstmt.setString(4, mvo.getPhone());
-			pstmt.setInt(5, mvo.getNo());
+			pstmt.setString(2, mvo.getPwd());
+			pstmt.setString(3, mvo.getId());
 			rs = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

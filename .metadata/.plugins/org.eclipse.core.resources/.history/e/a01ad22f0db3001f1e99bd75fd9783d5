@@ -1,0 +1,49 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>마이페이지</title>
+    <style>
+        table {
+            margin: 0 auto;
+        }
+        td {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        h1 {
+            text-align: center;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>마이페이지</h1>
+    <table width="300">
+        <tr>
+            <td>이름 = <%= request.getAttribute("name") %></td>
+        </tr>
+        <tr>
+            <td>ID = <%= request.getAttribute("id") %></td>
+        </tr>
+        <tr>
+            <td>비밀번호 = <%= request.getAttribute("pwd") %></td>
+        </tr>
+    </table>
+    <div class="buttons">
+        <a href="/jspStudy/member/memberUpdate.html">
+            <input type="button" value="회원정보 수정">
+        </a>
+        <a href="/jspStudy/loginServlet.do">
+            <input type="button" value="뒤로가기">
+        </a>
+    </div>
+</body>
+</html>

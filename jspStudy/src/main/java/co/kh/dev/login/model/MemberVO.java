@@ -7,26 +7,23 @@ public class MemberVO {
   private String name;//     varchar2(20) not null,
   private String id;//     varchar2(20) not null,
   private String pwd;//     varchar2(20) not null,
-  private String phone;//  varchar2(20) not null,
   private Date regdate;//   date not null
 public MemberVO() {
 	super();
 }
-public MemberVO(int no, String name, String id, String pwd, String phone, Date regdate) {
+public MemberVO(int no, String name, String id, String pwd, Date regdate) {
 	super();
 	this.no = no;
 	this.name = name;
 	this.id = id;
 	this.pwd = pwd;
-	this.phone = phone;
 	this.regdate = regdate;
 }
-public MemberVO(String name, String id, String pwd, String phone) {
+public MemberVO(String name, String id, String pwd) {
 	super();
 	this.name = name;
 	this.id = id;
 	this.pwd = pwd;
-	this.phone = phone;
 }
 public int getNo() {
 	return no;
@@ -52,12 +49,6 @@ public String getPwd() {
 public void setPwd(String pwd) {
 	this.pwd = pwd;
 }
-public String getPhone() {
-	return phone;
-}
-public void setPhone(String phone) {
-	this.phone = phone;
-}
 public Date getRegdate() {
 	return regdate;
 }
@@ -66,7 +57,7 @@ public void setRegdate(Date regdate) {
 }
 @Override
 public String toString() {
-	return "MemberVO [no=" + no + ", name=" + name + ", id=" + id + ", pwd=" + pwd + ", phone=" + phone + ", regdate="
+	return "MemberVO [no=" + no + ", name=" + name + ", id=" + id + ", pwd=" + pwd + ", regdate="
 			+ regdate + "]";
 }
   

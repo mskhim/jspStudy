@@ -1,0 +1,16 @@
+package co.kh.dev.login.controler;
+
+import co.kh.dev.login.model.MemberVO;
+
+public class MemberRegisterManager {
+	
+	public void selectLoginManager() {
+	}
+	
+	public void insertManager(MemberVO mvo) {
+	MemberDAO mDAO = new MemberDAO();
+	mDAO.insertDB(mvo);
+	}
+	
+	
+}

@@ -33,3 +33,26 @@
 1733382650598	Delete elements
 1733383657677	Copy file
 1733383691521	Delete element
+1733386220076	Delete element
+1733388954520	Delete element
+1733399010593	Delete element
+1733399294799	Rename resource 'member.html'
+1733399316273	Rename resource 'member.java'
+1733399337474	Rename resource 'member.jsp'
+1733399688365	Copy compilation unit
+1733399694800	Delete element
+1733399733204	Rename type 'MemberInsert'
+1733403431187	Rename type 'MemberRegist'
+1733403488412	Copy compilation unit
+1733403504345	Rename type 'LoginServlet'
+1733403531426	Delete element
+1733403535591	Copy compilation unit
+1733403544543	Rename type 'LoginCheckServlet'
+1733404595000	Delete element
+1733404848035	Delete element
+1733406286887	Delete element
+1733406564099	Copy compilation unit
+1733407580851	Delete element
+1733407710894	Copy compilation unit
+1733407721953	Rename type 'LogoutServlet'
+1733407740582	Delete elements
