@@ -16,6 +16,7 @@ import co.kh.dev.DBUtility;
 @WebServlet({ "/memberInsert.do" })
 public class MemberInsert extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
     public MemberInsert() {
         super();
     }
