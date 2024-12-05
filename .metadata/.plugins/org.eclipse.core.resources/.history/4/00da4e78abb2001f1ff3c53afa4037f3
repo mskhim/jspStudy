@@ -1,0 +1,44 @@
+package co.kh.dev.login;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet({ "/sendPageServlet.do" })
+public class SendPageServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public SendPageServlet() {
+        super();
+    }
+	
+	private void processRequest(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("요청처리시작.");
+		try {
+//			response.sendRedirect("destinationServlet.do");
+			RequestDispatcher rd = request.getRequestDispatcher("destinationServlet.do");
+			rd.forward(request, response);;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+		processRequest(request, response);
+	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+		processRequest(request, response);
+	}
+
+}

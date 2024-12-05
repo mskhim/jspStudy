@@ -1,0 +1,40 @@
+package co.kh.dev.login;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(name = "destinationServlet", urlPatterns = { "/destinationServlet.do" })
+public class DestinationServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    private void processRequest(HttpServletRequest request, HttpServletResponse response) {
+    	System.out.println("response 완료");
+    	response.setContentType("text/html; charSet=UTF-8");
+    	PrintWriter out = null;
+		try {
+			request.setCharacterEncoding("UTF-8");
+			out = response.getWriter();
+			out.print(request.getAttribute("name"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+		processRequest(request, response);
+	}
+
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+		processRequest(request, response);
+	}
+
+
+}

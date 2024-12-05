@@ -17,16 +17,7 @@
     <servlet-name>visitList</servlet-name>
     <url-pattern>/visitList</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>memberInsert</display-name>
-    <servlet-name>memberInsert</servlet-name>
-    <servlet-class>co.kh.dev.member.MemberInsert</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>memberInsert</servlet-name>
-    <url-pattern>/memberInsert</url-pattern>
-  </servlet-mapping>
+
   <servlet>
     <description></description>
     <display-name>memberList</display-name>

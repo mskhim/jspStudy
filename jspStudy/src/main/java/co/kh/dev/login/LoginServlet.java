@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
 	            out.println("</tr>");
 	            out.println("<tr>");
 	            out.println("<td align='center' colspan='2'>");
-	            out.println("<a href='/jspStudy/member/member.html'><input type='button' value='회원가입'></a> &nbsp; &nbsp;");
+	            out.println("<a href='/jspStudy/member/memb.html'><input type='button' value='회원가입'></a> &nbsp; &nbsp;");
 	            out.println("<input type='submit' value='로그인'>");
 	            out.println("</td>");
 	            out.println("</tr>");
