@@ -43,7 +43,7 @@ public class MemberDAO {
 	
 	//아이디를 받아서 아이디에 맞는 레코드 출력
 	public MemberVO selectByIdDB(MemberVO mvo) {
-		Connection con = DBUtility.dbCon();
+		Connection con = DBUtility
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {

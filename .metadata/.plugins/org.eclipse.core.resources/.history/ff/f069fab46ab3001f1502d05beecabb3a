@@ -24,6 +24,7 @@ public class MemberLoginCheckServlet extends HttpServlet {
 						session.setAttribute("id", mvo.getId());
 						session.setAttribute("pwd", mvo.getPwd());
 						session.setAttribute("name", mvo.getName());
+						System.out.println(mvo);
 						response.sendRedirect("/jspStudy/member/memberLogin.jsp");
 					} else {
 						response.sendRedirect("/jspStudy/member/memberLogin.jsp?error=1");

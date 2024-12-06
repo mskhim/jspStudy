@@ -6,8 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import co.kh.dev.DBUtility;
 import co.kh.dev.login.model.MemberVO;
-import co.kh.dev.common.DBUtility;
+
 public class MemberDAO {
 	private final String SELECT_SQL = "SELECT * FROM MEMBER ORDER BY NO";
 	private final String SELECT_BY_ID_SQL = "SELECT * FROM MEMBER WHERE ID = ?";

@@ -1,0 +1,8 @@
+package co.kh.dev.common;
+
+public class Snippet {
+	public static void main(String[] args) {
+		import co.kh.dev.
+	}
+}
+
