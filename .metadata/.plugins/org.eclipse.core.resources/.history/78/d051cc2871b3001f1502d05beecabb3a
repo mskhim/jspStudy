@@ -24,7 +24,7 @@ public class MemberRegistServlet extends HttpServlet {
 			String uid = request.getParameter("id");
 			String pwd = request.getParameter("pwd");
 			MemberVO mvo = new MemberVO(name, uid, pwd);
-			MemberVO checkMvo = mDAO.selectByIdDB(mvo);
+		MemberVO checkMvo = mDAO.selectByIdDB(mvo);
 			if(checkMvo.getRegdate()==null) {
 				mDAO.insertDB(mvo);
 				request.setAttribute("name", name);

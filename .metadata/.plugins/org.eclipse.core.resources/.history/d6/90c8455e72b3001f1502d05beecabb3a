@@ -87,6 +87,8 @@ public class MemberDAO {
 		return mvo;
 	}
 	
+	
+	
 	public Boolean insertDB(MemberVO mvo) {
 		Connection con = DBUtility.dbCon();
 		PreparedStatement pstmt = null;

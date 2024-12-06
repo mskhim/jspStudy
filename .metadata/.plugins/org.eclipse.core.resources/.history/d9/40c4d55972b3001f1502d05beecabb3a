@@ -74,18 +74,21 @@ public class MemberDAO {
 			pstmt.setString(1, mvo.getId());
 			pstmt.setString(2, mvo.getPwd());
 			rs = pstmt.executeQuery();
-				rs.next();
+			while(rs.next()) {
 				int no = rs.getInt("NO");
 				String name = rs.getString("NAME");
 				String id = rs.getString("ID");
 				String pwd = rs.getString("PWD");
 				Date regdate = rs.getDate("REGDATE");
 				mvo= new MemberVO(no, name, id, pwd, regdate);
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return mvo;
 	}
+	
+	
 	
 	public Boolean insertDB(MemberVO mvo) {
 		Connection con = DBUtility.dbCon();

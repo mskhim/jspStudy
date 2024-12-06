@@ -81,11 +81,14 @@ public class MemberDAO {
 				String pwd = rs.getString("PWD");
 				Date regdate = rs.getDate("REGDATE");
 				mvo= new MemberVO(no, name, id, pwd, regdate);
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return mvo;
 	}
+	
+	
 	
 	public Boolean insertDB(MemberVO mvo) {
 		Connection con = DBUtility.dbCon();
