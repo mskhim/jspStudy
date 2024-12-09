@@ -8,7 +8,7 @@ String pwd = (String)request.getAttribute("pwd");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>가입 완료!</title>
 <style>
         table {
             margin: 0 auto;
@@ -39,15 +39,15 @@ String pwd = (String)request.getAttribute("pwd");
 	<h1 align="center">회원가입이 완료되었습니다.</h1>
 	<table align="center" >
 		<tr>
-			<td align="center">이름 = <%=name%> <!-- name 값 -->
+			<td align="center">이름 = <%=name%> 
 			</td>
 		</tr>
 		<tr>
-			<td align="center">id = <%=id%> <!-- uid 값 -->
+			<td align="center">id = <%=id%> 
 			</td>
 		</tr>
 		<tr>
-			<td align="center">비밀번호 = <%=pwd%> <!-- pwd 값 -->
+			<td align="center">비밀번호 = <%=pwd%> 
 			</td>
 		</tr>
 	</table>

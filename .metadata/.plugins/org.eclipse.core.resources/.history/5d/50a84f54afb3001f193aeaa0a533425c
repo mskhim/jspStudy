@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/6ff644124c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./board.css" />
+  </head>
+  
+  <body>
+    <header>
+      <a href="#"><img src="./media/slide-1.jpg" alt="" id="img1" /></a>
+      <a href="#"><img src="./media/slide-2.jpg" alt="" id="img4" /></a>
+      <a href="#"><img src="./media/slide-3.jpg" alt="" id="img3" /></a>
+      <a href="#"><img src="./media/slide-4.jpg" alt="" id="img2" /></a>
+      <i class="fa-solid fa-circle-chevron-left" id="navgateleft"></i>
+      <i class="fa-solid fa-circle-chevron-right" id="navgateright"></i>
+      <div id="indicator">
+        <a href="#" class="active">
+          <i class="fa-solid fa-circle-dot"></i>
+        </a>
+        <a href="#"> <i class="fa-solid fa-circle-dot"></i></a
+        ><a href="#"> <i class="fa-solid fa-circle-dot"></i></a
+        ><a href="#"> <i class="fa-solid fa-circle-dot"></i></a>
+      </div>
+    </header>
+    <main>
+      <nav>
+        <h2>국민소통</h2>
+        <h4>국민참여</h4>
+        <ul>
+          <a href="#"><li>이벤트</li></a>
+          <a href="#"><li>칭찬합시다</li></a>
+          <a href="#"><li>궁급합니다</li></a>
+          <a href="#"><li>제안합니다</li></a>
+          <a href="#"><li>국민신고방(불법산행)</li></a>
+        </ul>
+        <h4>혁신제안</h4>
+        <ul>
+          <a href="#"><li>기업성장응답센터</li></a>
+          <a href="#"><li>사회적가치, 혁신 우수사례</li></a>
+        </ul>
+        <h4>클린신고센터</h4>
+        <ul>
+          <a href="#"><li>공익신고</li></a>
+          <a href="#"><li>소득행정신고</li></a>
+          <a href="#"><li>갑질신고</li></a>
+          <a href="#"><li>청탁금지법 위반신고</li></a>
+          <a href="#"><li>사이버감사실</li></a>
+          <a href="#"><li>예산낭비신고</li></a>
+          <a href="#"><li>갑질행위 공개</li></a>
+        </ul>
+      </nav>
+      <section>
+        <article class="article1">
+          <div class="head"><h1>칭찬합시다</h1></div>
+          <div class="head">
+            <ul>
+              <a href=""
+                ><li><i class="fa-solid fa-house"></i></li
+              ></a>
+              <a href=""><li>국립공원공단</li></a>
+              <a href=""><li>국민소통</li></a>
+              <a href=""><li>국민참여</li></a>
+              <a href=""><li>칭찬합시다</li></a>
+            </ul>
+          </div>
+        </article>
+        <article class="article2">
+          <p class="notice">
+            - 본 게시판과 관련이 없거나 상업적인 내용, 특정인이나 특정사안을
+            비방하는 내용 등은 예고없이 삭제될 수 있습니다.
+          </p>
+        </article>
+        <article class="article3">
+          <form action="viewFind">
+            <div class="select">
+              <select name="view" id="view">
+                <option value="1">10개씩</option>
+                <option value="2">20개씩</option>
+              </select>
+              <button type="button" id="viewButton">보기</button>
+            </div>
+             </form>
+            <div class="find">
+              <select name="find" id="find">
+                <option value="1">제목</option>
+                <option value="2">내용</option>
+              </select>
+              <input type="text" name="findText" id="findText" />
+              <button type="button" id="findButton">검색</button>
+            </div>
+          </form>
+        </article>
+        <article class="article4">
+          <table>
+            <tr>
+              <th>번호</th>
+              <th>공원명</th>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>조회수</th>
+              <th>등록일</th>
+            </tr>
+            <tr>
+              <td class="tbNum">5417</td>
+              <td class="tbName">북한산</td>
+              <td class="tbMain">
+                <a href="#">
+                  북한산 국립공원 특수산악구조대 전세호 주임님과 유동욱 주임님
+                  정말 감사했습니다!!!
+                </a>
+              </td>
+              <td class="tbWriter">안준모</td>
+              <td class="tbView">52</td>
+              <td class="tbDate">2022.12.20</td>
+            </tr>
+            <tr>
+              <td class="tbNum">5417</td>
+              <td class="tbName">북한산</td>
+              <td class="tbMain">
+                <a href="#">
+                  북한산 국립공원 특수산악구조대 전세호 주임님과 유동욱 주임님
+                  정말 감사했습니다!!!
+                </a>
+              </td>
+              <td class="tbWriter">안준모</td>
+              <td class="tbView">52</td>
+              <td class="tbDate">2022.12.20</td>
+            </tr>
+            <tr>
+              <td class="tbNum">5417</td>
+              <td class="tbName">북한산</td>
+              <td class="tbMain">
+                <a href="#">
+                  북한산 국립공원 특수산악구조대 전세호 주임님과 유동욱 주임님
+                  정말 감사했습니다!!!
+                </a>
+              </td>
+              <td class="tbWriter">안준모</td>
+              <td class="tbView">52</td>
+              <td class="tbDate">2022.12.20</td>
+            </tr>
+            <tr>
+              <td class="tbNum">5417</td>
+              <td class="tbName">북한산</td>
+              <td class="tbMain">
+                <a href="#">
+                  북한산 국립공원 특수산악구조대 전세호 주임님과 유동욱 주임님
+                  정말 감사했습니다!!!
+                </a>
+              </td>
+              <td class="tbWriter">안준모</td>
+              <td class="tbView">52</td>
+              <td class="tbDate">2022.12.20</td>
+            </tr>
+            <tr>
+              <td class="tbNum">5417</td>
+              <td class="tbName">북한산</td>
+              <td class="tbMain">
+                <a href="#">
+                  북한산 국립공원 특수산악구조대 전세호 주임님과 유동욱 주임님
+                  정말 감사했습니다!!!
+                </a>
+              </td>
+              <td class="tbWriter">안준모</td>
+              <td class="tbView">52</td>
+              <td class="tbDate">2022.12.20</td>
+            </tr>
+            <tr>
+              <td class="tbNum">5417</td>
+              <td class="tbName">북한산</td>
+              <td class="tbMain">
+                <a href="#">
+                  북한산 국립공원 특수산악구조대 전세호 주임님과 유동욱 주임님
+                  정말 감사했습니다!!!
+                </a>
+              </td>
+              <td class="tbWriter">안준모</td>
+              <td class="tbView">52</td>
+              <td class="tbDate">2022.12.20</td>
+            </tr>
+            <tr>
+              <td class="tbNum">5417</td>
+              <td class="tbName">북한산</td>
+              <td class="tbMain">
+                <a href="#">
+                  북한산 국립공원 특수산악구조대 전세호 주임님과 유동욱 주임님
+                  정말 감사했습니다!!!
+                </a>
+              </td>
+              <td class="tbWriter">안준모</td>
+              <td class="tbView">52</td>
+              <td class="tbDate">2022.12.20</td>
+            </tr>
+            <tr>
+              <td class="tbNum">5417</td>
+              <td class="tbName">북한산</td>
+              <td class="tbMain">
+                <a href="#">
+                  북한산 국립공원 특수산악구조대 전세호 주임님과 유동욱 주임님
+                  정말 감사했습니다!!!
+                </a>
+              </td>
+              <td class="tbWriter">안준모</td>
+              <td class="tbView">52</td>
+              <td class="tbDate">2022.12.20</td>
+            </tr>
+            <tr>
+              <td class="tbNum">5417</td>
+              <td class="tbName">북한산</td>
+              <td class="tbMain">
+                <a href="#">
+                  북한산 국립공원 특수산악구조대 전세호 주임님과 유동욱 주임님
+                  정말 감사했습니다!!!
+                </a>
+              </td>
+              <td class="tbWriter">안준모</td>
+              <td class="tbView">52</td>
+              <td class="tbDate">2022.12.20</td>
+            </tr>
+            <tr>
+              <td class="tbNum">5417</td>
+              <td class="tbName">북한산</td>
+              <td class="tbMain">
+                <a href="#">
+                  북한산 국립공원 특수산악구조대 전세호 주임님과 유동욱 주임님
+                  정말 감사했습니다!!!
+                </a>
+              </td>
+              <td class="tbWriter">안준모</td>
+              <td class="tbView">52</td>
+              <td class="tbDate">2022.12.20</td>
+            </tr>
+          </table>
+        </article>
+        <article class="article5">
+          <ul>
+            <a href="#">
+              <li><i class="fa-solid fa-angles-left"></i></li>
+            </a>
+            <a href="#">
+              <li><i class="fa-solid fa-angle-left"></i></li>
+            </a>
+            <a href="#"> <li>1</li> </a>
+            <a href="#"> <li>2</li> </a>
+            <a href="#"> <li>3</li> </a>
+            <a href="#"> <li>4</li> </a>
+            <a href="#"> <li>5</li> </a>
+            <a href="#"> <li>6</li> </a>
+            <a href="#"> <li>7</li> </a>
+            <a href="#"> <li>8</li> </a>
+            <a href="#"> <li>9</li> </a>
+            <a href="#"> <li>10</li> </a>
+            <a href="#">
+              <li><i class="fa-solid fa-chevron-right"></i></li>
+            </a>
+            <a href="#">
+              <li><i class="fa-solid fa-angles-right"></i></li>
+            </a>
+          </ul>
+          <form action="#" method="get" name="write">
+            <button type="button" id="writeButton">글쓰기</button>
+         
+        </article>
+      </section>
+    </main>
+    <script src="./board.js"></script>
+  </body>
+</html>

@@ -1,0 +1,199 @@
+* {
+	box-sizing: border-box;
+	flex-wrap: nowrap;
+}
+
+a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button {
+	padding: 5px 10px;
+	background-color: rgb(114, 114, 114);
+	border-radius: 3px;
+	border: none;
+	color: white;
+}
+
+/* -------기본 설정 영역 종료------------- */
+/* ------------header 시작----------- */
+header {
+	margin-top: 100px;
+	position: relative;
+	transition: translate(-50%, -50%);
+	height: 300px;
+}
+
+header img {
+	position: absolute;
+	height: 300px;
+	border-radius: 12px;
+	left: 50%;
+	top: 100px;
+	transform: translate(-50%, -50%);
+}
+
+header #navgateleft {
+	position: absolute;
+	left: 30%;
+	top: 80px;
+	font-size: 40px;
+	transition: translate(-50%, -50%);
+	color: rgba(255, 255, 255, 0.651);
+	z-index: 10;
+	cursor: pointer;
+}
+
+header #navgateright {
+	position: absolute;
+	right: 30%;
+	top: 80px;
+	font-size: 40px;
+	transition: translate(-50%, -50%);
+	color: rgba(255, 255, 255, 0.651);
+	z-index: 10;
+	cursor: pointer;
+}
+
+header #indicator>* {
+	margin-right: 10px;
+}
+
+header #indicator {
+	position: absolute;
+	bottom: 80px;
+	color: rgba(255, 255, 255, 0.651);
+	transform: translate(-50%);
+	left: 50%;
+	z-index: 10;
+}
+
+.active {
+	color: orange;
+}
+/* -------main 시작---------------------- */
+main {
+	display: flex;
+}
+
+/* -----------main nav------------ */
+nav {
+	margin-left: 10%;
+	margin-right: 50px;
+	position: relative;
+}
+
+nav h2 {
+	position: relative;
+	left: -10px;
+	padding-bottom: 10px;
+}
+
+nav h4 {
+	margin: 0;
+}
+
+nav h4:nth-child(2) {
+	padding-top: 15px;
+	border-top: 4px solid rgb(0, 115, 0);
+}
+
+nav ul {
+	list-style-type: none;
+	border-top: 2px solid rgb(196, 196, 196);
+	border-bottom: 2px solid rgb(196, 196, 196);
+	background-color: rgb(238, 238, 238);
+	width: 300px;
+	line-height: 27px;
+	font-size: 15px;
+}
+/* --------------------section 시작---------- */
+section {
+	width: 1000px;
+	overflow: hidden;
+	min-width: 1000px;
+}
+
+section article.article1 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+section article.article1 h1 {
+	color: rgb(0, 120, 0);
+}
+
+section article.article1 ul {
+	list-style-type: none;
+	display: flex;
+}
+
+section article.article1 ul li {
+	margin-right: 12px;
+	font-size: 13px;
+}
+
+section article.article2 p.notice {
+	font-size: 11px;
+}
+
+
+/* 전체 폼 스타일 */
+form {
+	display:relative;
+  max-width: 100%; /* 폼의 최대 너비 */
+  margin: 20px auto; /* 가운데 정렬 */
+  padding: 20px;
+  background-color: #f9f9f9; /* 폼 배경색 */
+  border-radius: 10px; /* 둥근 모서리 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+}
+
+/* 제목과 내용 텍스트 스타일 */
+form h2 {
+  font-size: 18px; /* 글씨 크기 */
+  color: #333; /* 글씨 색상 */
+  margin-bottom: 10px; /* 아래쪽 여백 */
+}
+
+/* 텍스트 입력 필드 스타일 */
+form .title,
+form .text {
+  width: 100%; /* 전체 너비 */
+  padding: 10px 15px; /* 안쪽 여백 */
+  font-size: 16px; /* 글씨 크기 */
+  border: 1px solid #ccc; /* 얇은 테두리 */
+  border-radius: 5px; /* 둥근 모서리 */
+  background-color: #fff; /* 배경색 */
+  box-sizing: border-box; /* 테두리와 패딩 포함 크기 */
+  transition: all 0.3s ease; /* 부드러운 애니메이션 */
+  outline: none; /* 포커스 시 기본 외곽선 제거 */
+}
+
+/* 텍스트 입력 필드 포커스 스타일 */
+form .title:focus,
+form .text:focus {
+  border-color: #007acc; /* 포커스 시 테두리 색상 */
+  box-shadow: 0 0 5px rgba(0, 122, 204, 0.5); /* 포커스 시 그림자 */
+}
+
+/* 텍스트 영역 추가 스타일 */
+form .text {
+  min-height: 400px; /* 텍스트 박스 최소 높이 */
+  resize: vertical; /* 세로 크기 조절 가능 */
+}
+
+section form button {
+	position: absolute;
+	right: 0px;
+	background-color: rgb(114, 114, 114);
+	border-radius: 3px;
+	border: none;
+	color: white;
+}

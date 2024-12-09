@@ -1,3 +1,4 @@
+<%@page import="co.kh.dev.common.MyUtility"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 
 <!DOCTYPE html>
@@ -8,6 +9,9 @@
         table {
             margin: 0 auto;
             border-collapse: collapse;
+        }
+        th {
+        		width : 100px;
         }
         tr {
             text-align: center;
@@ -33,7 +37,7 @@
 <html>
 <%
 String name = (String) session.getAttribute("name");
-if (name == null) {
+if (MyUtility.isNullOrEmpty(name)) {
 %>
 <body>
 	<%if(request.getParameter("error")!=null&&request.getParameter("error").equals("2")){ %>
@@ -47,14 +51,14 @@ if (name == null) {
 	
 	<%}}  %>
 	<form method="post" action="/jspStudy/memberloginCheckServlet.do">
-		<table width="300" align="center">
+		<table align="center">
 			<tr>
-				<th width="100">아이디</th>
-				<td width="200">&nbsp;<input type="text" name="id"></td>
+				<th >아이디</th>
+				<td >&nbsp;<input type="text" name="id"></td>
 			</tr>
 			<tr>
-				<th width="100">비밀번호</th>
-				<td width="200">&nbsp;<input type="password" name="pwd"></td>
+				<th>비밀번호</th>
+				<td>&nbsp;<input type="password" name="pwd"></td>
 			</tr>
 		</table>
 		<div class="buttons">
@@ -76,6 +80,8 @@ if (name == null) {
 	<div class="buttons">
 	<a href="/jspStudy/member/memberMyPage.jsp"><input type="button"
 						value="마이페이지"></a>
+				&nbsp;&nbsp;<a href="/jspStudy/board/boardMain.jsp"><input type="button"
+						value="게시판"></a>
 				&nbsp;&nbsp; <a href="/jspStudy/memberLogoutServlet.do"><input type="button"
 						value="로그아웃"></a>
 		</div>

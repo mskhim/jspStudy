@@ -1,0 +1,40 @@
+package co.kh.dev.board.controller;
+
+import java.io.IOException;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import co.kh.dev.board.model.BoardDAO;
+import co.kh.dev.board.model.BoardVO;
+
+@WebServlet({ "/boardViewTime.do" })
+public class BoardSelectByRowNumServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    public BoardSelectByRowNumServlet() {
+        super();
+    }
+    
+    private void processRequest(HttpServletRequest request, HttpServletResponse response) {
+    	BoardDAO bDAO = new BoardDAO();
+    	int rowNum =Integer.parseInt(request.getParameter("rowNum"));
+    	BoardVO bvo = new BoardVO();
+    	bvo.setRownum(rowNum);
+    	bvo = bDAO.selectByRowNumDB(bvo);
+    	response.sendRedirect("/jspStudy/board/boardWriteInside.jsp?rowNum="+);
+    	
+    }
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response){
+		processRequest(request, response);
+	}
+
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response){
+		processRequest(request, response);
+	}
+
+}

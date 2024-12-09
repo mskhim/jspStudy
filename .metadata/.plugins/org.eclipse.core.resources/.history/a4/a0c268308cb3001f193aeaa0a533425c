@@ -1,0 +1,63 @@
+package co.kh.dev.login.controler;
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import co.kh.dev.login.model.MemberDAO;
+import co.kh.dev.login.model.MemberVO;
+
+
+@WebServlet({ "/memberRegistServlet.do" })
+public class MemberRegistServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) {
+    	MemberDAO mDAO = new MemberDAO();
+		try {
+			System.out.println("dejfo");
+			request.setCharacterEncoding("UTF-8");
+			response.setContentType("text/html;charSet=UTF-8");
+			RequestDispatcher rd = request.getRequestDispatcher("/member/memberAfterRegist.jsp");
+			String name = request.getParameter("name");
+			String uid = request.getParameter("id");
+			String pwd = request.getParameter("pwd");
+			if(name==null||uid==null||pwd==null) {
+				response.sendRedirect("/jspStudy/member/memberRegist.jsp?error=2");
+			}else {
+			MemberVO mvo = new MemberVO(name, uid, pwd);
+			MemberVO checkMvo = mDAO.selectByIdDB(mvo);
+			System.out.println(name+uid+pwd);
+			System.out.println("dejfo");
+			if(checkMvo==null) {
+				mDAO.insertDB(mvo);
+				request.setAttribute("name", name);
+				request.setAttribute("id", uid);
+				request.setAttribute("pwd", pwd);
+				rd.forward(request, response);
+			}else {
+				response.sendRedirect("/jspStudy/member/memberRegist.jsp?error=1");
+			}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ServletException e) {
+			e.printStackTrace();
+		}
+    	
+    }
+	
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response){
+		processRequest(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response){
+		processRequest(request, response);
+	}
+
+}

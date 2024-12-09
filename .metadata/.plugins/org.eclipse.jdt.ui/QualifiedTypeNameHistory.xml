@@ -19,8 +19,12 @@
     <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="co.kh.dev.login.controler.MemberLoginCheckServlet"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="co.kh.dev.login.controler.MemberDAO"/>
     <fullyQualifiedTypeName name="java.lang.reflect.Member"/>
     <fullyQualifiedTypeName name="co.kh.dev.login.model.MemberVO"/>
+    <fullyQualifiedTypeName name="co.kh.dev.common.DBUtility"/>
+    <fullyQualifiedTypeName name="co.kh.dev.common.MyUtility"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="co.kh.dev.board.model.BoardDAO"/>
+    <fullyQualifiedTypeName name="co.kh.dev.board.model.BoardVO"/>
 </qualifiedTypeNameHistroy>
