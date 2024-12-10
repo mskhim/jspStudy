@@ -1,9 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <%
-String name = (String)request.getAttribute("name");
-String id = (String)request.getAttribute("id");
-String pwd = (String)request.getAttribute("pwd");
+String name = request.getParameter("name");
+String id = request.getParameter("id");
+String pwd = request.getParameter("pwd");
 %>
 <html>
 <head>
@@ -37,9 +37,7 @@ String pwd = (String)request.getAttribute("pwd");
 </head>
 <body>
 	<h1 align="center">회원가입이 완료되었습니다.</h1>
-	<table align="center" >
-		<tr>
-			<td align="center">이름 = <%=name%> 
+	<table align="center" >    
 			</td>
 		</tr>
 		<tr>

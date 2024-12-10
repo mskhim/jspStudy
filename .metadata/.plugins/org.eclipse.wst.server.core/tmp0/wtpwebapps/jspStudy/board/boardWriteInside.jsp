@@ -19,7 +19,7 @@ bvo = bDAO.selectByRowNumDB(bvo);
 <title>Document</title>
 <script src="https://kit.fontawesome.com/6ff644124c.js"
 	crossorigin="anonymous"></script>
-<link rel="stylesheet" href="./boardWrite.css" />
+<link rel="stylesheet" href="./css/boardWrite.css" />
 <style>
 
 .participation:nth-of-type(2) {
@@ -98,6 +98,6 @@ bvo = bDAO.selectByRowNumDB(bvo);
 				</form>
 		</section>
 	</main>
-	<script src="./board.js"></script>
+	<script src="./js/board.js"></script>
 </body>
 </html>

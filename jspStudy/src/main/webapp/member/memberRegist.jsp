@@ -4,40 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
-<style>
-table {
-	margin: 0 auto;
-	border-collapse: collapse;
-}
-
-tr {
-	text-align: center;
-	padding: 10px;
-	border: 1px solid #ccc;
-}
-
-th {
-	width: 100px;
-}
-
-td {
-	text-align: center;
-	padding: 10px;
-	border: 1px solid #ccc;
-	width: 200px;
-}
-
-h1 {
-	text-align: center;
-}
-
-.buttons {
-	display: flex;
-	justify-content: center;
-	gap: 10px;
-	margin-top: 10px;
-}
-</style>
+<link rel="stylesheet" href="./member.css" />
 </head>
 <body>
 	<form method="post" action="/jspStudy/memberRegistServlet.do">

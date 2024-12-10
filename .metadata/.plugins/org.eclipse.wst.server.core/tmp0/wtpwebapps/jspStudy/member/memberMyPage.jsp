@@ -12,26 +12,7 @@ if(session.getAttribute("name")==null){
 <head>
 <meta charset="UTF-8">
 <title>마이페이지</title>
- <style>
-        table {
-            margin: 0 auto;
-            border-collapse: collapse;
-        }
-        td {
-            text-align: center;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-        h1 {
-            text-align: center;
-        }
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-    </style>
+ <link rel="stylesheet" href="./member.css" />
 </head>
 <body>
 <%if(request.getParameter("error")!=null){ %>

@@ -1,0 +1,51 @@
+package co.kh.dev.tempmember.model;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import co.kh.dev.common.DBUtility;
+
+public class TempMemberDAO {
+	private final String SELECT_SQL = "SELECT * FROM TempMember ORDER BY NO";
+	private final String SELECT_BY_ID_SQL = "SELECT * FROM TempMember WHERE ID = ?";
+	private final String SELECT_LOGIN_CHECK_SQL = "SELECT * FROM TempMember WHERE ID = ? AND PWD = ?";
+	private final String INSERT_SQL = "INSERT INTO TempMember VALUES((SELECT NVL(MAX(NO),0)+1 FROM TempMember),?,?,?,SYSDATE)";
+	private final String DELETE_SQL = "DELETE FROM TempMember WHERE NO = ?";
+	private final String UPDATE_SQL = "UPDATE TempMember SET NAME= ? , PWD = ? WHERE ID = ?";
+
+	// 전체를 DB에서 출력
+	public ArrayList<TempMemberVO> selectDB() {
+		Connection con = DBUtility.dbCon();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<TempMemberVO> mList = new ArrayList<TempMemberVO>();
+		try {
+			pstmt = con.prepareStatement(SELECT_SQL);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				TempMemberVO mvo = new TempMemberVO();
+				mvo.setId(rs.getString("ID")); // 사용자 ID
+				mvo.setPasswd(rs.getString("PASSWD")); // 비밀번호
+				mvo.setName(rs.getString("NAME")); // 이름
+				mvo.setMemNum1(rs.getString("MEM_NUM1")); // 주민등록번호 앞자리
+				mvo.setMemNum2(rs.getString("MEM_NUM2")); // 주민등록번호 뒷자리
+				mvo.setEmail(rs.getString("E_MAIL")); // 이메일
+				mvo.setPhone(rs.getString("PHONE")); // 전화번호
+				mvo.setZipcode(rs.getString("ZIPCODE")); // 우편번호
+				mvo.setAddress(rs.getString("ADDRESS")); // 주소
+				mvo.setJob(rs.getString("JOB")); // 직업
+				mList.add(mvo);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		DBUtility.dbClose(con, rs, pstmt);
+		return mList;
+	}
+
+}

@@ -31,9 +31,6 @@ public class MemberRegistServlet extends HttpServlet {
 			MemberVO checkMvo = mDAO.selectByIdDB(mvo);
 			if(checkMvo==null) {
 				mDAO.insertDB(mvo);
-				request.setAttribute("name", name);
-				request.setAttribute("id", uid);
-				request.setAttribute("pwd", pwd);
 				rd.forward(request, response);
 			}else {
 				response.sendRedirect("/jspStudy/member/memberRegist.jsp?error=1");

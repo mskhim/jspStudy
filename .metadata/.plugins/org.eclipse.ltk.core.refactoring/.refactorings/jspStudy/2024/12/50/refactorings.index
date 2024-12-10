@@ -10,3 +10,11 @@
 1733634627782	Copy compilation unit
 1733635073087	Copy file
 1733635655251	Delete element
+1733722265685	Move 2 resources to 'css'
+1733722502859	Move 'board.js' to 'js'
+1733793593327	Move 'member.css' to 'css'
+1733794159815	Move 'carousel.jsp' to 'board'
+1733795063436	Delete element
+1733798551228	Delete element
+1733799693237	Copy compilation unit
+1733799710183	Rename type 'MemberDAO'

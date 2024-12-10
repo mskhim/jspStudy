@@ -5,34 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
- <style>
-        table {
-            margin: 0 auto;
-            border-collapse: collapse;
-        }
-        th {
-        		width : 100px;
-        }
-        tr {
-            text-align: center;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-        td {
-            text-align: center;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-        h1 {
-            text-align: center;
-        }
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-    </style>
+ <link rel="stylesheet" href="./member.css" />
 </head>
 <html>
 <%
@@ -40,16 +13,14 @@ String name = (String) session.getAttribute("name");
 if (MyUtility.isNullOrEmpty(name)) {
 %>
 <body>
+	 <script>
 	<%if(request.getParameter("error")!=null&&request.getParameter("error").equals("2")){ %>
-	 <script>
             alert("아이디 또는 비밀번호가 맞지 않습니다.");
-   </script>
 	<%} else{ if(request.getParameter("error")!=null&&request.getParameter("error").equals("1")){ %>
-	 <script>
             alert("비밀번호가 맞지 않습니다.");
-   </script>
 	
 	<%}}  %>
+   </script>
 	<form method="post" action="/jspStudy/memberloginCheckServlet.do">
 		<table align="center">
 			<tr>
